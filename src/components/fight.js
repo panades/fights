@@ -1,15 +1,33 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
+import { ListBox } from 'primereact/listbox';
+import { Button } from 'primereact/button';
+import '../styles/fight.css';
 
 class BattleType extends Component {
-    types = ["fire", "grass", "ground", "water"];
-    render() {
+	constructor() {
+		super();
+		this.state = {
+			player: { name: 'aaa', code: 'bbb' }
+		};
+	}
+    render() {        
+        const battletypes = [
+            {name: 'Air', code: 'air'},
+            {name: 'Earth', code: 'ear'},
+            {name: 'Fire', code: 'fir'},
+            {name: 'Water', code: 'wat'}
+        ];
         return (
-            <Fragment>
+            <div className="p-col">
                 <h3>{this.props.name}</h3>
-                <ul>
-                    { this.types.map(t=><li>{t}</li>) }
-                </ul>
-            </Fragment>
+                <ListBox
+					value={this.state.player}
+					options={battletypes}
+					onChange={e => this.setState({ player: e.value })}
+                    optionLabel='name'
+                    className="p-shadow-5"
+				/>
+            </div>
         );
     }
 }
@@ -17,14 +35,15 @@ class BattleType extends Component {
 class Fight extends Component {
     render() {
         return (
-            <div>
-                <h1>Battle fight</h1>
-                <div>
-                    <BattleType name="Fight 01" />
-                    <p>VS</p>
-                    <BattleType name="Fight 02"/>
+            <div className="fight">
+                <h2>Fight selection</h2>
+                <div className="p-grid p-col-align-center">
+                    <BattleType name="Player 01" />
+                    <BattleType name="Player 02" />
                 </div>
-                <button>Fight</button>
+                <div className="p-col">
+                    <Button label="Fight" className="p-button-danger" />
+                </div>
             </div>
         );
     }
