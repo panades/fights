@@ -3,6 +3,7 @@ import { ListBox } from 'primereact/listbox';
 import { Button } from 'primereact/button';
 import { Messages } from 'primereact/messages';
 import '../styles/fight.css';
+import data from "./assets/data/elements.json";
 
 class BattleType extends Component {
 
@@ -18,12 +19,7 @@ class BattleType extends Component {
     };
     
     render() {        
-        const battletypes = [
-            {name: 'Air', code: 'air'},
-            {name: 'Earth', code: 'ear'},
-            {name: 'Fire', code: 'fir'},
-            {name: 'Water', code: 'wat'}
-        ];
+        const battletypes = data.elements;
         return (
             <div className="p-col">
                 <h3>{this.props.name}</h3>
