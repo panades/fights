@@ -15,7 +15,7 @@ class Battle extends Component {
         winner: ""
     }
 
-    battle = event => {
+    battle = e => {
         let newState = {...this.state};
        
         let player01 = this.props.data.player01.code;

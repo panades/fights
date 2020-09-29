@@ -1,39 +1,7 @@
 import React, { Component } from 'react';
+import Players from './players';
 import Battle from './battle';
-import { ListBox } from 'primereact/listbox';
 import '../styles/fight.css';
-import data from "../assets/data/elements.json";
-
-class BattleType extends Component {
-
-	state = {
-			player: this.props.data
-    };
-    
-    handleChange = e => {
-        let newState = {...this.state};
-        newState.player = e.value;
-        this.setState(newState);
-        this.props.onUpdatePlayer(this.props.id, newState.player)
-    };
-    
-    render() {        
-        const battletypes = data.elements;
-        return (
-            <div className="p-col">
-                <h3>{this.props.name}</h3>
-                <ListBox
-                    id={this.props.id}
-                    value={this.state.player}
-					options={battletypes}
-                    onChange={this.handleChange}
-                    optionLabel='name'
-                    className='p-shadow-5'       
-				/>
-            </div>
-        );
-    }
-}
 
 class Fight extends Component {
 
@@ -55,10 +23,10 @@ class Fight extends Component {
     render() {
         return (
             <div className="fight">
-                <h2>Fight selection</h2>
+                <h2>Player selection</h2>
                 <div className="p-grid p-col-align-center">
-                    <BattleType name="Player 01" id="player01" data={this.state.player01} onUpdatePlayer={this.updatePlayer} />
-                    <BattleType name="Player 02" id="player02" data={this.state.player02} onUpdatePlayer={this.updatePlayer} />                    
+                    <Players name="Player 01" id="player01" data={this.state.player01} onUpdatePlayer={this.updatePlayer} />
+                    <Players name="Player 02" id="player02" data={this.state.player02} onUpdatePlayer={this.updatePlayer} />                    
                 </div>
                 <Battle data={this.state} />
             </div>
