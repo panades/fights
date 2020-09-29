@@ -15,11 +15,19 @@ class Players extends Component {
         this.props.onUpdatePlayer(this.props.id, newState.player)
     };
     
+    elementTemplate(option) {
+        return (
+            <div className="element-item">
+                <img src={require(`../assets/img/${option.code}.png`)}/>
+                <div>{option.name}</div>
+            </div>
+        );
+    }
     render() {        
         const playertypes = data.elements;
         return (
             <div className="p-col">
-                <h3>{this.props.name}</h3>
+                <h2>{this.props.name}</h2>
                 <ListBox
                     id={this.props.id}
                     value={this.state.player}
@@ -27,6 +35,7 @@ class Players extends Component {
                     onChange={this.handleChange}
                     optionLabel='name'
                     className='p-shadow-5'       
+                    itemTemplate={this.elementTemplate}
 				/>
             </div>
         );

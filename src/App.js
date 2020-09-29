@@ -12,6 +12,7 @@ function App() {
     <div className="App">
       <Header />
       <Fight />
+      <div>Icons made by <a href="https://www.flaticon.es/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.local</a></div>
     </div>
   );
 }
