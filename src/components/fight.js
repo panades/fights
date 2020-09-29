@@ -23,7 +23,6 @@ class Fight extends Component {
     render() {
         return (
             <div className="fight">
-                <h2>Player selection</h2>
                 <div className="p-grid p-col-align-center">
                     <Players name="Player 01" id="player01" data={this.state.player01} onUpdatePlayer={this.updatePlayer} />
                     <Players name="Player 02" id="player02" data={this.state.player02} onUpdatePlayer={this.updatePlayer} />                    
