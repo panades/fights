@@ -1,0 +1,9 @@
+{
+    "elements":  [
+        {"name": "Earth", "code": "earth"},
+        {"name": "Fire", "code": "fire"},
+        {"name": "Lightning", "code": "lightning"},
+        {"name": "Water", "code": "water"},
+        {"name": "Wind", "code": "wind"}
+    ]
+}
