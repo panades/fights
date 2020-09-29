@@ -1,8 +1,9 @@
 {
     "elements":  [
-        {"name": "Air", "code": "air"},
-        {"name": "Earth", "code": "ear"},
-        {"name": "Fire", "code": "fir"},
-        {"name": "Water", "code": "wat"}
+        {"name": "Earth", "code": "earth"},
+        {"name": "Fire", "code": "fire"},
+        {"name": "Lightning", "code": "lightning"},
+        {"name": "Water", "code": "water"},
+        {"name": "Wind", "code": "wind"}
     ]
 }

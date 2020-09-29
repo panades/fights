@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import Battle from './battle';
 import { ListBox } from 'primereact/listbox';
-import { Button } from 'primereact/button';
-import { Messages } from 'primereact/messages';
 import '../styles/fight.css';
-import data from "./assets/data/elements.json";
+import data from "../assets/data/elements.json";
 
 class BattleType extends Component {
 
@@ -38,18 +37,9 @@ class BattleType extends Component {
 
 class Fight extends Component {
 
-    newPlayer = { name: '', code: '' };
-
     state = {
-        player01: this.newPlayer,
-        player02: this.newPlayer
-    }
-
-    battle = event => {
-		this.messages.show({
-			severity: 'success',
-			summary: 'You win!'
-		});
+        player01: { name: '', code: '' },
+        player02: { name: '', code: '' }
     }
     
     updatePlayer = (id, updatedPlayerValue) => {
@@ -70,10 +60,7 @@ class Fight extends Component {
                     <BattleType name="Player 01" id="player01" data={this.state.player01} onUpdatePlayer={this.updatePlayer} />
                     <BattleType name="Player 02" id="player02" data={this.state.player02} onUpdatePlayer={this.updatePlayer} />                    
                 </div>
-                <div className="p-col">
-                    <Button onClick={this.battle} label='Fight' className='p-button-danger' />
-                    <Messages ref={el => (this.messages = el)} />
-                </div>
+                <Battle data={this.state} />
             </div>
         );
     }
