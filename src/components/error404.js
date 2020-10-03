@@ -19,7 +19,7 @@ goBack = e => {
                         <img src={require(`../assets/img/error-404.png`)} alt='Error 404' />
                     </div>
                     <div className='p-col'>
-                        <h2>Page not found!</h2>
+                        <h2>Page not found</h2>
                     </div>
                     <div className='p-col'>
                         <Button onClick={this.goBack} label='Back' className='p-button-secondary' />

@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 class Header extends Component {
     render() {
         return (
-            <header className='App-header p-grid p-d-flex p-jc-center'>           
+            <header className='App-header p-d-flex p-jc-center'>           
                 <div className='p-mr-4'>                    
-                    <img src={require(`../assets/img/logo.png`)} alt='Fight' />  
+                    <img src={require(`../assets/img/logo.png`)} alt='Fight' />     
                 </div>
                 <div className='p-mr-4'>
-                    <h1>Let's battle!</h1>
+                    <h1>Fight</h1>
                 </div>
                 <div className='p-mr-4'>
                     <img src={require(`../assets/img/logo.png`)} alt='Fight' />     

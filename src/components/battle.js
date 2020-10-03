@@ -18,8 +18,8 @@ class Battle extends Component {
     battle = e => {
         let newState = {...this.state};
        
-        let player01 = this.props.data.player01.code;
-        let player02 = this.props.data.player02.code;
+        let player1 = this.props.data.player1.code;
+        let player2 = this.props.data.player2.code;
 
         let winTemplate = {
 			severity: 'success',
@@ -34,18 +34,18 @@ class Battle extends Component {
 			summary: 'Tied!'
         };
         
-        if (this.state.winTo[player01] === player02) {
+        if (this.state.winTo[player1] === player2) {
             newState.winner = 'player1';
-            this.player01Result.show(winTemplate);
-            this.player02Result.show(loseTemplate);  
-        } else if (this.state.winTo[player02] === player01) {
+            this.player1Result.show(winTemplate);
+            this.player2Result.show(loseTemplate);  
+        } else if (this.state.winTo[player2] === player1) {
             newState.winner = 'player2';
-            this.player01Result.show(loseTemplate);
-            this.player02Result.show(winTemplate); 
+            this.player1Result.show(loseTemplate);
+            this.player2Result.show(winTemplate); 
         }
         if (newState.winner === '') {
-            this.player01Result.show(tiedTemplate);
-            this.player02Result.show(tiedTemplate); 
+            this.player1Result.show(tiedTemplate);
+            this.player2Result.show(tiedTemplate); 
         }
         newState.winner = '';
         this.setState(newState);
@@ -54,10 +54,10 @@ class Battle extends Component {
     render () {
         return (
             <Fragment>
-                <div className='p-col'><Button onClick={this.battle} label='Fight' className='p-button-danger' /></div>
+                <div className='p-col'><Button onClick={this.battle} label={`Let's battle`} className='p-button-danger' /></div>
                 <div>
-                    <Messages ref={el => (this.player01Result = el)} className='p-col-6 p-inline-message' />
-                    <Messages ref={el => (this.player02Result = el)} className='p-col-6 p-inline-message' /> 
+                    <Messages ref={el => (this.player1Result = el)} className='p-col-6 p-inline-message' />
+                    <Messages ref={el => (this.player2Result = el)} className='p-col-6 p-inline-message' /> 
                 </div>                
             </Fragment>
         );
