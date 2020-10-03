@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Players from './players';
 import Battle from './battle';
-import '../styles/fight.css';
 
 class Fight extends Component {
 
@@ -12,7 +11,7 @@ class Fight extends Component {
     
     updatePlayer = (id, updatedPlayerValue) => {
         let newState = {...this.state};
-        if (id === "player01") {
+        if (id === 'player1') {
             newState.player01 = updatedPlayerValue;
         } else {
             newState.player02 = updatedPlayerValue;
@@ -22,10 +21,10 @@ class Fight extends Component {
 
     render() {
         return (
-            <div className="fight">
-                <div className="p-grid p-col-align-center">
-                    <Players name="Player 01" id="player01" data={this.state.player01} onUpdatePlayer={this.updatePlayer} />
-                    <Players name="Player 02" id="player02" data={this.state.player02} onUpdatePlayer={this.updatePlayer} />                    
+            <div>
+                <div className='p-grid p-col-align-center'>
+                    <Players name='Player 1' id='player1' data={this.state.player01} onUpdatePlayer={this.updatePlayer} />
+                    <Players name='Player 2' id='player2' data={this.state.player02} onUpdatePlayer={this.updatePlayer} />                    
                 </div>
                 <Battle data={this.state} />
             </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ListBox } from 'primereact/listbox';
-import data from "../assets/data/elements.json";
+import data from '../assets/data/elements.json';
 
 class Players extends Component {
 
@@ -17,8 +17,8 @@ class Players extends Component {
     
     elementTemplate(option) {
         return (
-            <div className="element-item">
-                <img src={require(`../assets/img/${option.code}.png`)}/>
+            <div className='element-item'>
+                <img src={require(`../assets/img/${option.code}.png`)} alt={`${option.name}`}/>
                 <div>{option.name}</div>
             </div>
         );
@@ -26,8 +26,12 @@ class Players extends Component {
     render() {        
         const playertypes = data.elements;
         return (
-            <div className="p-col">
-                <h2>{this.props.name}</h2>
+            <div className='p-col'>
+                <div className='p-d-flex p-jc-center'>
+                    <div className='p-mr-2 p-as-center' ><img src={require(`../assets/img/player.png`)} alt={this.props.name} /></div>
+                    <div className='p-mr-2'><h2>{this.props.name}</h2></div>
+                </div>
+                
                 <ListBox
                     id={this.props.id}
                     value={this.state.player}
