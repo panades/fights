@@ -4,7 +4,7 @@
 
 .App-header {
   background: linear-gradient(50deg, #f06, gold 40%);
-  min-height: 20vh;
+  min-height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -5,16 +5,16 @@ import Battle from './battle';
 class Fight extends Component {
 
     state = {
-        player01: { name: '', code: '' },
-        player02: { name: '', code: '' }
+        player1: { name: '', code: '' },
+        player2: { name: '', code: '' }
     }
     
     updatePlayer = (id, updatedPlayerValue) => {
         let newState = {...this.state};
         if (id === 'player1') {
-            newState.player01 = updatedPlayerValue;
+            newState.player1 = updatedPlayerValue;
         } else {
-            newState.player02 = updatedPlayerValue;
+            newState.player2 = updatedPlayerValue;
         }
         this.setState(newState);
     }
