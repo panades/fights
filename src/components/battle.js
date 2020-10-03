@@ -6,13 +6,13 @@ class Battle extends Component {
 
     state = {
         winTo: {
-            earth: "water",
-            fire: "wind",
-            lightning: "earth",
-            water: "fire",
-            wind: "lightning"
+            earth: 'water',
+            fire: 'wind',
+            lightning: 'earth',
+            water: 'fire',
+            wind: 'lightning'
         },
-        winner: ""
+        winner: ''
     }
 
     battle = e => {
@@ -35,29 +35,29 @@ class Battle extends Component {
         };
         
         if (this.state.winTo[player01] === player02) {
-            newState.winner = "player01";
+            newState.winner = 'player1';
             this.player01Result.show(winTemplate);
             this.player02Result.show(loseTemplate);  
         } else if (this.state.winTo[player02] === player01) {
-            newState.winner = "player02";
+            newState.winner = 'player2';
             this.player01Result.show(loseTemplate);
             this.player02Result.show(winTemplate); 
         }
-        if (newState.winner === "") {
+        if (newState.winner === '') {
             this.player01Result.show(tiedTemplate);
             this.player02Result.show(tiedTemplate); 
         }
-        newState.winner = "";
+        newState.winner = '';
         this.setState(newState);
     }
     
     render () {
         return (
             <Fragment>
-                <div className="p-col"><Button onClick={this.battle} label='Fight' className='p-button-danger' /></div>
+                <div className='p-col'><Button onClick={this.battle} label='Fight' className='p-button-danger' /></div>
                 <div>
-                    <Messages ref={el => (this.player01Result = el)} className="p-col-6 p-inline-message" />
-                    <Messages ref={el => (this.player02Result = el)} className="p-col-6 p-inline-message" /> 
+                    <Messages ref={el => (this.player01Result = el)} className='p-col-6 p-inline-message' />
+                    <Messages ref={el => (this.player02Result = el)} className='p-col-6 p-inline-message' /> 
                 </div>                
             </Fragment>
         );
